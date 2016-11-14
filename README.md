@@ -1,2 +1,2 @@
 # meonline2
-My personal website revamped in all jaavscript
+A simple yet cool personal website build upon MEAN stack.
