@@ -5,7 +5,7 @@ var port = process.env.port || 3000;
 var path = require('path');
 
 //require all routers and use its as a callback function of app.use middleware
-var albumRouter = require('./routes/AlbumRoutes');
+var albumRouter = require('./routes/AlbumRoutes')();
 //instruct middleware to serve static content from following directories
 app.use(express.static('public'));
 app.use(express.static('public/pages'));
