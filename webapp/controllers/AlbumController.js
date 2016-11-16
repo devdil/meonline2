@@ -1,7 +1,12 @@
 var albumController = function(){
 	
 	var post = function(req,resp){
-	console.log("POST RECEIVED");	
+	var imageDTO = {
+		'name' : req.body.name,
+		'description' : req.body.description,
+		'images' : req.body.images
+	};	
+
 	resp.status(201).send("Request Accepted");
 	};
 
