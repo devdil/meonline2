@@ -1,7 +1,7 @@
 
-var imageService = require('../services/ImageService');
+var photoService = require('../services/ImageService');
 
-var imageController = function(){
+var photoController = function(){
 	
 	var post = function(req,res){
 		var imageDTO = {
@@ -18,7 +18,7 @@ var imageController = function(){
 			
 			}	
 		};
-		imageService.saveImage(imageDTO, callBack);
+		photoService.saveImage(imageDTO, callBack);
 	};
 
 	var getAll = function(req,resp){
@@ -33,4 +33,4 @@ var imageController = function(){
 
 };
 
-module.exports = imageController;
+module.exports = photoController;

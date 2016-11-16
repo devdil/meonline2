@@ -1,4 +1,4 @@
-var imageService = function(){
+var photoService = function(){
 
 
 var saveImage = function(imageDTO,handlers){
@@ -14,4 +14,4 @@ return {
 }();
 
 
-module.exports = imageService;
+module.exports = photoService;
