@@ -22,6 +22,10 @@ app.use('/api/albums',albumRouter);
 	res.sendFile(path.join(__dirname+'/public/pages/albums.html'));
 });*/
 
+app.get('/photos',function(req,resp){
+    resp.sendFile(path.join(__dirname+'/public/pages/Photos.html'));    
+});
+
 //starting the nodejs web server
 app.listen(port,function(err){
 	if (err){
