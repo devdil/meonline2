@@ -8,7 +8,7 @@ var path = require('path');
 var albumRouter = require('./routes/AlbumRoutes')();
 //instruct middleware to serve static content from following directories
 app.use(express.static('public'));
-app.use(express.static('public/pages'));
+app.use('/private',express.static('public'));
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -25,7 +25,9 @@ app.use('/api/albums',albumRouter);
 app.get('/photos',function(req,resp){
     resp.sendFile(path.join(__dirname+'/public/pages/Photos.html'));    
 });
-
+app.get('/private/photos',function(req,resp){
+    resp.sendFile(path.join(__dirname+'/private/pages/Photos.html'));
+});
 //starting the nodejs web server
 app.listen(port,function(err){
 	if (err){
