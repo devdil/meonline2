@@ -4,7 +4,7 @@
   "description": "My personal website",
   "main": "init.js",
   "scripts": {
-    "test": "echo TestScript",
+    "test": "cd webapp && npm install",
     "start": "node init.js"
   },
   "author": "Diljit Ramachandran",
