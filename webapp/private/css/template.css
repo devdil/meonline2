@@ -1,0 +1,24 @@
+#site-info{
+border-bottom:solid 1px gray;
+}
+
+#sidebar-container{
+background-color:#e1e5ed;
+height: 100%;
+}
+
+#page-info-container{
+border-bottom:solid 1px gray;
+}
+
+#content-container {
+background-color:#f2f4f7;
+}
+
+#main-container {
+	height:100%;
+}
+
+#page-container{
+	height:100%;
+}

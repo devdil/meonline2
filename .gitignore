@@ -1,0 +1,6 @@
+#node module directory
+node_modules/
+
+#ignore temp directory
+temp/
+photos/

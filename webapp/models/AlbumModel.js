@@ -28,4 +28,4 @@ var albumModel = new Schema({
 	}	
 });
 
-module.exports = mongoose.mode('Albums',albumModel);
+module.exports = mongoose.model('Albums',albumModel);

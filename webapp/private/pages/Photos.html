@@ -2,16 +2,14 @@
 <html>
 	<head>
 		<title>Pictures</title>
-        <link rel="stylesheet" type="text/css" href="../lib/bootstrap/dist/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="../js/template.css">
-        <script src="../lib/jquery/dist/jquery.min.js"></script>
-		<script src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../private/lib/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="../private/css/template.css">
 	</head>
 	<body>
     <div class="container-fluid" id="main-container">
         <div class="row-fluid" id="page-container">
             <div class="col-lg-2" id="sidebar-container">
-                <div class="row-fluid" id="site-info">
+                <div class="row-fluid" id="site-info">a
                     <h1>Diljit</h1>
                     <p>welcome to little musings of my life</p>
                 </div>
@@ -35,55 +33,42 @@
                                 <h3>Create Album</h3>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form name="createAlbumForm" method="POST" id="createAlbumForm">
                                     <div class="form-group">
                                         <label for="albumName">Name</label>
-                                        <input type="text" class="form-control" id="albumName"/>
+                                        <input type="text" class="form-control" name ="albumName" id="albumName"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="albumDescription">Description</label>
-                                        <input type="text" class="form-control" id="albumDescription"/>
+                                        <input type="text" class="form-control" name="albumDescription" id="albumDescription"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="albumDate">Date</label>
-                                        <input type="date"  id="albumDate"/>
+                                        <input type="date" class="form-control" name="albumDate" id="albumDate"/>
                                     </div>
                                     <div class="form-group">
                                         <label for="albumFiles">Photos</label>
-                                        <input type="file" multiple id="albumFiles"/>
+                                        <input type="file" class="form-control" multiple name="albumPhotos" id="albumPhotos"/>
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
+                                 <button type="button" id="createAlbumButton" class="btn btn-primary">Create</button>
                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                    </div>
                </div>
                <div class="row-fluid" id="content-info-container">
-               <table class="table">
-                <tr>
-                    <td>
-                            <img width="300px" height="200px" src="http://www.freedigitalphotos.net/images/img/homepage/87357.jpg">
-                            <p class="text-left">Birthday Celebration</p>
-                            <p class="text-left">Splendid memories of my birthday celebration<p>
-                    </td>
-                    <td>
-                            <img width="300px" height="200px" src="http://www.freedigitalphotos.net/images/img/homepage/87357.jpg">
-                            <p class="text-left">Birthday Celebration</p>
-                            <p class="text-left">Description</p>
-                    </td>
-                    <td>
-                            <img width="300px" height="200px" src="http://www.freedigitalphotos.net/images/img/homepage/87357.jpg">
-                            <p>Birthday Celebration</p>
-                            <p>Description</p>
-                    </td>
-                </tr>
+               <table class="table" id="albumTableContent">
                </table>
                </div>
             </div>
         </div>
     </div>
     </body>
+    <script src="../private/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../private/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../private/js/AlbumView.js"></script>
 </html>
 

@@ -7,7 +7,7 @@
 6 silly lifecycle meonline@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle meonline@1.0.0~start: meonline@1.0.0
 8 verbose lifecycle meonline@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle meonline@1.0.0~start: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/diljit/Documents/meonline2/webapp/node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/diljit/.local/bin:/home/diljit/bin
+9 verbose lifecycle meonline@1.0.0~start: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/diljit/Documents/meonline2/webapp/node_modules/.bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/home/diljit/.local/bin:/home/diljit/bin
 10 verbose lifecycle meonline@1.0.0~start: CWD: /home/diljit/Documents/meonline2/webapp
 11 silly lifecycle meonline@1.0.0~start: Args: [ '-c', 'node init.js' ]
 12 silly lifecycle meonline@1.0.0~start: Returned: code: 1  signal: null
