@@ -50,7 +50,7 @@ var albumService = function() {
                     AlbumModel.update({
                         "id": albumModel.id
                     }, {
-                        "images": results,
+                        "images"	: results,
                         "status" :"OK"
                     }, function(error, rawResponse) {
                         if (error) {
@@ -88,7 +88,27 @@ var albumService = function() {
         });
 
     };
-    var getAlbumById = function() {};
+    var getAlbumById = function(albumId, handlers) {
+
+    	AlbumModel.findOne({ id : albumId},function(error,queryResult){
+    		if(error){
+    			var result = {
+    				status: "error",
+    				results : {
+    						message:  "Resource Not Found",
+    						details : "The request resouce was not found",
+    						resolution : "Please retry the request with a valid identifer"
+    				}
+    			};
+    			handlers.error(result);
+
+    		}
+    		else{
+    			handlers.success(queryResult);
+    		}
+    	})
+
+    };
     return {
 
         createAlbum: createAlbum,

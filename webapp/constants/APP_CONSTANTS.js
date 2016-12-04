@@ -10,7 +10,35 @@ var APP_CONSTANTS = function() {
         WEBAPP_CONSTANTS: {
             PHOTOS_DOWNLOAD_DIRECTORY: PHOTOS_DOWNLOAD_DIRECTORY,
             DATABASE_NAME: DATABASE_NAME,
-            PHOTOS_PUBLIC_URL : PHOTOS_PUBLIC_URL
+            PHOTOS_PUBLIC_URL: PHOTOS_PUBLIC_URL
+        },
+
+        HTTP_CONSTANTS: {
+
+            "2XX": {
+                "200": {
+                    "statusCode": "200",
+                    "status": "OK",
+                    "methods": ["get", "getAll"]
+                },
+                "202": {
+                    "statusCode": "202",
+                    "status": "Accepted",
+                    "methods": ["post", "asynchronous"]
+                },
+                "201": {
+                    "statusCode": "201",
+                    "status": "Created",
+                    "methods": ['post']
+                },
+                "204": {
+                    "statusCode": "204",
+                    "status": "No Content",
+                    "methods": ["delete"]
+                }
+
+            }
+
         }
 
     }

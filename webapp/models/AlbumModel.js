@@ -25,6 +25,9 @@ var albumModel = new Schema({
 	},
 	status : {
 		type : String
+	},
+	thumbnailPhotoUrl:{
+		type: String
 	}	
 });
 

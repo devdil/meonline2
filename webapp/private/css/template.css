@@ -22,3 +22,7 @@ background-color:#f2f4f7;
 #page-container{
 	height:100%;
 }
+
+#content-info-container{
+	padding :40px;
+}

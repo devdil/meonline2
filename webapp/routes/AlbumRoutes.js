@@ -5,6 +5,8 @@ var router = function(){
 	albumRouter.route('/').
 			get(albumController.getAll).
 			post(albumController.post);
+	albumRouter.route('/:id').
+			get(albumController.getById);
 
 	return albumRouter;
 

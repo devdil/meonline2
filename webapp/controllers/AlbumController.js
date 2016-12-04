@@ -3,6 +3,7 @@ var upload = multer({
     dest: __dirname + '/../temp'
 });
 var albumService = require('../services/AlbumService');
+var appConstants = require('../constants/APP_CONSTANTS');
 
 
 /*
@@ -41,12 +42,12 @@ var albumController = function() {
         };
 
         var callback = {
-        	success : function (results){
-        		resp.status(200).send("Request succeeded");
-        	},
-        	error : function (error){
-        		resp.status(503).send("Could not complete the request"+error);
-        	}
+            success: function(results) {
+                resp.status(200).send("Request succeeded");
+            },
+            error: function(error) {
+                resp.status(503).send("Could not complete the request" + error);
+            }
         };
 
         albumService.createAlbum(albumDTO);
@@ -54,10 +55,64 @@ var albumController = function() {
         resp.status(201).send("Request Accepted");
     };
 
-    var get = function(req, resp) {
+    /*
+    	method type : GET
+    	sample url  : /rest/albums/:id
+    	url params:
+    		@param id  		: The unique album Identifer
+    	returns:
+    	    status code : 200 OK
+    	    respose body:
+    				albumObject
+    				example: {
+								"id" : "923ad349-cfe3-4196-a771-60f71e2cfd8e",
+								"name" : "test",
+								"date" : "2016-12-14T00:00:00Z",
+								"created" : "2016-12-04T14:44:01.143Z",
+								"uri" : "/rest/albums/923ad349-cfe3-4196-a771-60f71e2cfd8e",
+								"status" : "OK",
+								"images" : [
+									"/rest/photos/8bdfd9cc-5285-4a6c-bc43-ce2dac8b7c4d"
+								],
+							}
+    */
+
+    var getById = function(req, resp) {
         console.log("GET ACCEPTED");
-        resp.status(200).send("Sample Text");
+        var albumId = req.params.id
+        var callBack = {
+        	success:function(results){
+        		resp.status(appConstants.HTTP_CONSTANTS["2XX"]["200"].statusCode).send(results);
+        	},
+        	error : function(error){
+        		resp.status(404).send(error);
+        	}
+        };
+        albumService.getAlbumById(albumId,callBack);
     };
+
+    /*
+    	method type : GET
+    	sample url : /rest/albums
+    	returns:
+    	    status code : 200 OK
+    	    respose body:
+    				array of albumObjects
+    				example : [
+    							{
+									"id" : "923ad349-cfe3-4196-a771-60f71e2cfd8e",
+									"name" : "test",
+									"date" : "2016-12-14T00:00:00Z",
+									"created" : "2016-12-04T14:44:01.143Z",
+									"uri" : "/rest/albums/923ad349-cfe3-4196-a771-60f71e2cfd8e",
+									"status" : "OK",
+									"images" : [
+										"/rest/photos/8bdfd9cc-5285-4a6c-bc43-ce2dac8b7c4d"
+									],
+								}
+    						]
+    		
+    */
 
     var getAll = function(req, resp) {
         console.log("GET ALL ACCEPTED");
@@ -75,7 +130,7 @@ var albumController = function() {
 
     return {
 
-        get: get,
+        getById: getById,
         getAll: getAll,
         post: [upload.array('albumPhotos', 20), post]
 
