@@ -24,10 +24,13 @@ app.use('/rest/albums',albumRouter);
 	res.sendFile(path.join(__dirname+'/public/pages/albums.html'));
 });*/
 
-app.get('/photos',function(req,resp){
+app.get('/albums',function(req,resp){
     resp.sendFile(path.join(__dirname+'/public/pages/Photos.html'));    
 });
-app.get('/private/photos',function(req,resp){
+app.get('/albums/:id',function(req,resp){
+	resp.status(200).send("Cool");
+});
+app.get('/private/albums',function(req,resp){
     resp.sendFile(path.join(__dirname+'/private/pages/Photos.html'));
 });
 //starting the nodejs web server

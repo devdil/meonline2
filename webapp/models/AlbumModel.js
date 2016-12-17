@@ -17,9 +17,6 @@ var albumModel = new Schema({
 	uri : {
 		type : String
 	},
-	images : {
-		type : Array
-	},
 	created : {
 		type : Date
 	},

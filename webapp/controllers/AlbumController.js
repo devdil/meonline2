@@ -10,7 +10,6 @@ var appConstants = require('../constants/APP_CONSTANTS');
 	Request uri : /rest/albums/
 	Actions supported : POST,DELETE,GET,PUT
 */
-
 var albumController = function() {
 
 

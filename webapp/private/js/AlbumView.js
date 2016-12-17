@@ -44,9 +44,9 @@
          	if (item.images){}
              var tdContent = "<td><img width='300px' height='200px' src=" + 
              "http://www.freedigitalphotos.net/images/img/homepage/87357.jpg" + 
-             "><p class = 'text-left' > "+item.name +
-             "</p><p class = 'text-left' > "+item.description+
-             "</p></td>";
+             "><div class = 'text-left' ><a href='/albums/"+item.id+"'>"+item.name +
+             "</a></div><div class = 'text-left' > "+item.description+
+             "</div></td>";
              if (index % 4 != 0) {
                  albumTRContent += tdContent;
              } else {

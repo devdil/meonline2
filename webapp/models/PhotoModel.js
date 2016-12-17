@@ -5,6 +5,9 @@ var photoModel = new Schema({
 	id : {
 		type : String
 	},
+	album_id : {
+		type: String
+	},
 	name : {
 		type : String
 	},
